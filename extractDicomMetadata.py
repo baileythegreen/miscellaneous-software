@@ -25,10 +25,6 @@ def help():
 
 def parse_options(values):
     p = optparse.OptionParser()
-   # p.add_option("-p", action = "store", dest = "pheno_file")
-   # p.add_option("--phenos", action = "store", dest = "pheno_file")
-   # p.set_defaults(pheno_file = '/exports/igmm/eddie/haley-lab/Common/UKB/ukb27263.tsv',
-   #     out_file = 'extracted_ukbb_phenotypes.tsv', translation_file = '/exports/igmm/eddie/haley-lab/Common/UKB/ukb27263_fields.tsv')
     return p.parse_args()
 
 def main():
@@ -37,10 +33,10 @@ def main():
     opts, args = parse_options(sys.argv)
     scan_dir = args[0]
     #set the scan directory
-    os.chdir('/exports/igmm/eddie/haley-lab/bailey/ukbb/ukbbDexa/dxa_processing_scripts/%s' % scan_dir)
+    os.chdir('%s' % scan_dir)
     #Create a container of all the relevant files
     folder = glob.glob('*.dcm')
-    with open('./ukbb_metadata_covariates.tsv', 'w+') as outfile:
+    with open('./metadata_covariates.tsv', 'w+') as outfile:
         outfile.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' % ('iid', 'centre', 'bg_colour', 'sex', 'age', 'height', 'weight', 'ethnicity'))
         for f in folder:
             try:
