@@ -1,0 +1,19 @@
+sumstats:
+  file_name: "ulna.tsv"
+  format: 'wilson'
+  rsid: 0
+  chrom: 2
+---
+index_snps:
+  file_name: "geneatlas_height_snps.tsv"
+  format: 'ld_clumps'
+  rsid: 2
+  chrom: 0
+  ld_snps: 11
+  ld_sep: ';'
+---
+#document:
+  #file_name:
+  #format:
+  #rsid:
+  #chrom:
